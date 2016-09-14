@@ -18,50 +18,24 @@
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
 
-	   var Poo = React.createClass({
-  render: function() {
-    return (
-      <div className="buttonClass">
-        Hello, world! I am a Poo
-		
-		
-      </div>
-    );
-	
-  }
-});
-	  
-	  
-	   var ButtonClass = React.createClass({
-  render: function() {
-    return (
-      <div className="buttonClass">
-        Hello, world! I am a ButtonClass.
-		<Poo/>
-      </div>
-    );
-	
-  }
-});
-	  
-   var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-		<ButtonClass/>
-      </div>
-    );
-  }
-});
-ReactDOM.render(
-  <CommentBox />,
-  
-  document.getElementById('content')
-);
+
+        // React class for a button
+        var InputButton = React.createClass({
+            displayName: 'InputButton',
+            render: function() {
+                return (
+                    <div><input type="button" value="Enter" /></div>
+                    <div><MovieBox movieTitle = "Mitch Edelman, Man Myth Legend"/></div>
+                );
+            }
+        });
+
+
+        ReactDOM.render(<InputButton />, document.getElementById('input2'));
 
     </script>
 
     <div id='input'></div>
+    <div id='input2'></div>
   </body>
 </html>
