@@ -18,20 +18,33 @@
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
 
+        // React class for a button
+        var MovieDisplay = React.createClass({
+            render: function() {
+                return (
+                    <div>"Movie " + {this.props.title} </div>
+                    
+                );
+            }
+        });	  
+	  
+	  
 
         // React class for a button
         var InputButton = React.createClass({
             displayName: 'InputButton',
             render: function() {
                 return (
-                    <div><input type="button" value="Enter" /></div>
-                    <div><MovieBox movieTitle = "Mitch Edelman, Man Myth Legend"/></div>
+                    <div>
+					<MovieDisplay title="my movie" />
+					</div>
+                    
                 );
             }
         });
 
 
-        ReactDOM.render(<InputButton />, document.getElementById('input2'));
+        ReactDOM.render(<InputButton title="fred"/>, document.getElementById('input2'));
 
     </script>
 
