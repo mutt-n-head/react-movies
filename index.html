@@ -53,14 +53,13 @@
             render: function() {
                 return (
                     <div>
-                    <div>
-                        <form>
-                        <input type="text" id="inputText" placeholder="Enter a movie name" onChange={this.handleMovieChange} value={this.state.textBoxText} />
-                        <p>{this.state.textBoxText}</p>
-                        <input type="button" value="Enter" />
-                        </form>
-                    </div>
-                    <MovieDisplay title="The Mitch Edelman Story" />
+                        <div>
+                            <form>
+                                <input type="text" id="inputText" placeholder="Enter a movie name" onChange={this.handleMovieChange} value={this.state.textBoxText} />
+                                <input type="button" value="Enter" />
+                            </form>
+                        </div>
+                        <MovieDisplay title="The Mitch Edelman Story" />
                     </div>
                 );
             }
