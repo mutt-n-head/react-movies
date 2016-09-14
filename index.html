@@ -16,14 +16,33 @@
     <script type="text/babel">
       // To get started with this tutorial running your own code, simply remove
       // the script tag loading scripts/example.js and start writing code here.
+      //
+      // <div><MovieBox movieTitle = "Mitch Edelman, Man Myth Legend"/></div>
+      // <div><input type="text" id="inputText" value="sample" /></div>
 
         // React class for a button
         var InputButton = React.createClass({
+            getInitialState: function() {
+                return {
+                    textBoxText: ''
+                };
+            },
+            handleMovieChange: function(e) {
+                this.setState({textBoxText: e.target.value});
+            },
+            updateTextBox: function() {
+                this.status.textBoxText = 'I was updated';
+            },
             displayName: 'InputButton',
             render: function() {
                 return (
-                    <div><input type="button" value="Enter" /></div>
-                    <div><MovieBox movieTitle = "Mitch Edelman, Man Myth Legend"/></div>
+                    <div>
+                        <form>
+                        <input type="text" id="inputText" placeholder="Enter a movie name" onChange={this.handleMovieChange} value={this.state.textBoxText} />
+                        <p>{this.state.textBoxText}</p>
+                        <input type="button" value="Enter" />
+                        </form>
+                    </div>
                 );
             }
         });
