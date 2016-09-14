@@ -19,29 +19,20 @@
 
         // React class for a button
         var InputButton = React.createClass({
-
+            displayName: 'InputButton',
             render: function() {
                 return (
-                    <input type="button" value="Enter" />
-                );
-            }
-
-        });
-
-
-        var Edelman = React.createClass({
-            render: function() {
-                return (
-                    <h1>Pick a movie</h1>
-                    <InputButton />
+                    <div><input type="button" value="Enter" /></div>
+                    <div><MovieBox movieTitle = "Mitch Edelman, Man Myth Legend"/></div>
                 );
             }
         });
 
 
-        ReactDOM.render(<InputButton />, document.getElementById('input'));
+        ReactDOM.render(<InputButton />, document.getElementById('input2'));
     </script>
 
     <div id='input'></div>
+    <div id='input2'></div>
   </body>
 </html>
