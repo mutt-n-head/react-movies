@@ -40,7 +40,8 @@
         var InputButton = React.createClass({
             getInitialState: function() {
                 return {
-                    textBoxText: ''
+                    textBoxText: '',
+                    movies: {}
                 };
             },
             handleMovieChange: function(e) {
@@ -51,6 +52,11 @@
             },
             displayName: 'InputButton',
             render: function() {
+                var rows = [];
+                for (var i = 0; i < 2; i++) {
+                    rows.push(<MovieDisplay title="The Mitch Edelman Story" />);
+                }
+
                 return (
                     <div>
                         <div>
@@ -59,8 +65,8 @@
                                 <input type="button" value="Enter" />
                             </form>
                         </div>
-                        <MovieDisplay title="The Mitch Edelman Story" />
-                    </div>
+                        {rows}
+                   </div>
                 );
             }
         });
